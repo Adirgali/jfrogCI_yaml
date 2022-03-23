@@ -26,8 +26,8 @@ pipelines:
         configuration:
           dockerFileLocation: .
           dockerFileName: dockerfile
-          dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1
-          dockerImageTag: latest
+          dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1:latest
+          dockerImageTag: ${run_number}
           inputResources:
             - name: adir_git
           integrations:
