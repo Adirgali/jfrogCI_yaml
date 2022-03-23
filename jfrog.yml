@@ -12,7 +12,7 @@ resources:
   - name: adir_arti
     type: Image
     configuration:
-      registry: myArtifactory
+      registry: Artifactory
       sourceRepository: adirg-task/
       imageName: jfrogtask1
       imageTag: latest
