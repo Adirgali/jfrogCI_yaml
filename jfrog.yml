@@ -7,6 +7,10 @@ resources:
       path: AdirGali/jfrogCI
       branches: 
         include: main
+      buildOn:
+        commit: true
+        
+
 
 # Docker image in an Artifactory repository
   - name: adir_arti
