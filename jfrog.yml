@@ -1,0 +1,27 @@
+resources:
+# Application source repository
+ - name: adir_git
+   type: GitRepo
+   configuration:
+     GitProvider: GitHub
+     path: AdirGali/jfrogCI
+     branches: 
+      include: main
+
+      # Docker image in an Artifactory repository
+  - name: adir_arti
+    type: Image
+    configuration:
+      registry: myArtifactory
+      sourceRepository: adirg-task/
+      imageName: adirg-task
+      imageTag: latest
+      autoPull: true
+      
+pipelines:
+  - name: adir_pipline
+    steps:
+      - name: build_image
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: .
