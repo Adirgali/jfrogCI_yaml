@@ -27,4 +27,7 @@ pipelines:
           FileLocation: .
           dockerFileName: dockerfile
           dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1:latest
+          imageTag: latest
+          autoPull: true
+
 
