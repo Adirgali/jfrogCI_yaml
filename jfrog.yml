@@ -8,7 +8,7 @@ resources:
       branches: 
         include: main
 
-      # Docker image in an Artifactory repository
+# Docker image in an Artifactory repository
   - name: adir_arti
     type: Image
     configuration:
@@ -29,7 +29,7 @@ pipelines:
           dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1:latest
           dockerImageTag: latest
           inputResources:
-            - name: adir_arti
+            - name: adir_git
           integrations:
             - name: Artifactory
 
