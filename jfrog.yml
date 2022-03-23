@@ -22,6 +22,7 @@ resources:
       imageTag: latest
       autoPull: true
       
+pipelines:
 
   - name: adir_pipline
     steps:
@@ -45,5 +46,3 @@ resources:
             - name: adir_git
           integrations:
             - name: Artifactory
-
-
