@@ -3,6 +3,7 @@ resources:
   - name: adir_git
     type: GitRepo
     configuration:
+      gitProvider: Github
       path: AdirGali/jfrogCI
       branches: 
         include: main
