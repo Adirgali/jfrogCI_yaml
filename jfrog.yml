@@ -14,7 +14,7 @@ resources:
     configuration:
       registry: myArtifactory
       sourceRepository: adirg-task/
-      imageName: adirg-task
+      imageName: jfrogtask1
       imageTag: latest
       autoPull: true
       
@@ -24,4 +24,7 @@ pipelines:
       - name: build_image
         type: DockerBuild
         configuration:
-          dockerFileLocation: .
+          FileLocation: .
+          dockerFileName: dockerfile
+          dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1:latest
+          
