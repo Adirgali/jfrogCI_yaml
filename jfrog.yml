@@ -31,6 +31,6 @@ pipelines:
           inputResources:
             - name: adir_git
           integrations:
-            - name: Artifactory
+            - name: Github
 
 
