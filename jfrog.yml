@@ -22,9 +22,18 @@ resources:
       imageTag: latest
       autoPull: true
       
-pipelines:
+
   - name: adir_pipline
     steps:
+      - name: printenv
+        type: Bash
+        configuration:
+          inputResources:
+            - name: adir_git
+        execution:
+          onExecute:
+            - printenv
+            - ls
       - name: build_image
         type: DockerBuild
         configuration:
