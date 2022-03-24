@@ -68,7 +68,7 @@ pipelines:
         type: XrayScan
         configuration:
           affinityGroup: adir_group
-          inputResoursces:
+          inputResources:
             - name: adir_build
 
 
