@@ -10,6 +10,11 @@ resources:
       buildOn:
         commit: true
 
+  - name: adir_build
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: Artifactory      
+
 
 
 # Docker image in an Artifactory repository
@@ -52,9 +57,9 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-             - name: DockerPush
+             - name: docker_push
           outputResources:
-             - name: buildInfo     
+             - name: BuildInfo     
 
 
 
