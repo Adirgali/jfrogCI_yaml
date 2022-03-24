@@ -42,7 +42,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: adir_group
-          targetRepository: adirg-task/
+          targetRepository: adirg-task
           integrations:
             - name: Artifactory                     # <-- replace with your artifactory integration
           inputSteps:
