@@ -27,7 +27,7 @@ pipelines:
   - name: build_image
     type: DockerBuild
     configuration:
-      affinityGroup: adir_group
+ #     affinityGroup: adir_group
       dockerFileLocation: .
       dockerFileName: Dockerfile
       dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1
@@ -40,7 +40,7 @@ pipelines:
   - name: docker_push
     type: DockerPush
     configuration:
-      affinityGroup: adir_group
+ #     affinityGroup: adir_group
       targetRepository: adirg-task/
       integrations:
         - name: Artifactory                     # <-- replace with your artifactory integration
