@@ -67,7 +67,8 @@ pipelines:
       - name: adir_xray
         type: XrayScan
         configuration:
-          inputResoursces: adir_build
+          inputResoursces:
+            - name: adir_build
 
 
 
