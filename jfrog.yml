@@ -23,6 +23,7 @@ resources:
     #   autoPull: true
       
 pipelines:
+
  steps:
    - name: build_image
      type: DockerBuild
