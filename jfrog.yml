@@ -13,39 +13,39 @@ resources:
 
 
 # Docker image in an Artifactory repository
-  - name: adir_arti
-    type: Image
-    configuration:
-      registry: Artifactory
-      sourceRepository: adirg-task/
-      imageName: jfrogtask1
-      imageTag: latest
-      autoPull: true
+#  - name: adir_arti
+    # type: Image
+    # configuration:
+    #   registry: Artifactory
+    #   sourceRepository: adirg-task/
+    #   imageName: jfrogtask1
+    #   imageTag: latest
+    #   autoPull: true
       
 pipelines:
+ steps:
+   - name: build_image
+     type: DockerBuild
+     configuration:
+       affinityGroup: adir_group
+       dockerFileLocation: .
+       dockerFileName: Dockerfile
+       dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1
+       dockerImageTag: ${run_number}
+       inputResources:
+         - name: adir_git
+       integrations:
+         - name: Artifactory
 
-  - name: build_image
-    type: DockerBuild
-    configuration:
- #     affinityGroup: adir_group
-      dockerFileLocation: .
-      dockerFileName: Dockerfile
-      dockerImageName: pe16362adirg.jfrog.io/adirg-task/jfrogtask1
-      dockerImageTag: ${run_number}
-      inputResources:
-        - name: adir_git
-      integrations:
-        - name: Artifactory
-
-  - name: docker_push
-    type: DockerPush
-    configuration:
- #     affinityGroup: adir_group
-      targetRepository: adirg-task/
-      integrations:
-        - name: Artifactory                     # <-- replace with your artifactory integration
-      inputSteps:
-        - name: build_image
+   - name: docker_push
+     type: DockerPush
+     configuration:
+       affinityGroup: adir_group
+       targetRepository: adirg-task/
+       integrations:
+         - name: Artifactory                     # <-- replace with your artifactory integration
+       inputSteps:
+         - name: build_image
 
 
 
