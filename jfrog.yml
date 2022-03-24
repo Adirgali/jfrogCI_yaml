@@ -49,7 +49,7 @@ pipelines:
             - name: build_image
 
       - name: publish_build
-        type: PublishBuildOnfo
+        type: PublishBuildInfo
         configuration:
         inputSteps:
            - name: DockerPush
