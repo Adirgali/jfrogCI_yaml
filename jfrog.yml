@@ -59,7 +59,7 @@ pipelines:
           inputSteps:
              - name: docker_push
           outputResources:
-             - name: BuildInfo     
+             - name: adir_build    
 
 
 
