@@ -51,10 +51,10 @@ pipelines:
       - name: publish_build
         type: PublishBuildInfo
         configuration:
-        inputSteps:
-           - name: DockerPush
-        outputResources:
-           - name: buildInfo     
+          inputSteps:
+             - name: DockerPush
+          outputResources:
+             - name: buildInfo     
 
 
 
