@@ -48,6 +48,14 @@ pipelines:
           inputSteps:
             - name: build_image
 
+      - name: publish_build
+        type: PublishBuildOnfo
+        configuration:
+        inputSteps:
+           - name: DockerPush
+        outputResources:
+           - name: buildInfo     
+
 
 
 
