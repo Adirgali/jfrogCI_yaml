@@ -48,7 +48,7 @@ pipelines:
         configuration:
           affinityGroup: adir_group
           targetRepository: adirg-task
-          forceXrayScan: true 
+          # forceXrayScan: true 
           integrations:
             - name: Artifactory                     # <-- replace with your artifactory integration
           inputSteps:
@@ -57,12 +57,18 @@ pipelines:
       - name: publish_build
         type: PublishBuildInfo
         configuration:
-          forceXrayScan: true
+          # forceXrayScan: true
           affinityGroup: adir_group
           inputSteps:
              - name: docker_push
           outputResources:
-             - name: adir_build    
+             - name: adir_build   
+
+      - name: adir_xray
+        type: XrayScan
+        configuration:
+          inputResoursces:
+            - name: adir_build
 
 
 
